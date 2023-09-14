@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tracker
+{% endblock %}
+
+{% block main %}
+    <form action="/tracker" method="post">
+        <h1>
+            Welcome to Your Financial Tracker :D
+        </h1>
+
+        <div class = expense>
+            <form method="post">  
+                <label> Add an Expense </label>
+                <input autocomplete="off" autofocus class="form-control" placeholder="Description" list="exp_option" id="desc" name="desc" type="text"/>
+                    <datalist id="exp_option">
+                    {% for exp_options in exp_options %}
+                        <option value="{{exp_options.desc}}"> Previous Description </option>
+                    {% endfor %}
+                    </datalist>
+                <input autocomplete="off" autofocus class="form-control" id="value" name="value" placeholder="Value" type="number", min = 0, step=0.01>
+                <input autocomplete="off" autofocus class="form-control" id="date" name="date" type="date" value="xxxx-xx-xx">
+                <button class="btn btn-primary" type="submit" name="type_id" value="Expense">Add Expense</button>
+            </form>
+        </div>
+
+        <div class = income>
+            <form method="post">  
+                <label> Add Income </label>
+                <input autocomplete="off" autofocus class="form-control" placeholder="Description" list="inc_option" id="desc" name="desc" type="text"/>
+                <datalist id="inc_option">
+                {% for inc_options in inc_options %}
+                    <option value="{{inc_options.desc}}"> Previous Description </option>
+                {% endfor %}
+                </datalist>
+                <input autocomplete="off" autofocus class="form-control" id="value" name="value" placeholder="Value" type="number", min = 0, step=0.01>
+                <input autocomplete="off" autofocus class="form-control" id="date" name="date" type="date" value="xxxx-xx-xx">
+                <button class="btn btn-primary" type="submit" name="type_id" value="Income">Add Income</button>
+            </form>
+        </div>
+           
+        <table> 
+            <thead>
+                <tr> 
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Value</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for history in history %}
+                    <tr>
+                        <td>{{history.type}}</td>
+                        <td>{{history.desc}}</td>
+                        <td>${{history.value}}</td>
+                        <td>{{history.transacted}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </form>
+
+{% endblock %}

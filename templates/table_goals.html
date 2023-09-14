@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Goals
+{% endblock %}
+
+{% block main %}
+  
+    <table> 
+        <thead>
+            <tr> 
+                <th>Completed</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody class="table_goals">
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for goals in goals %}
+                <tr>
+                    <td><input type="checkbox"> </td>
+                    <td>{{goals.title}}</td>
+                    <td>{{goals.desc}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

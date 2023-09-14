@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Goals
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1> Quote of the Day: </h1>
+        <h2>{{ response['quote'] }}</h2>
+        <h3> By: {{ response['author'] }}</h3>
+    </div>
+
+    <div class="Smart-Goals">
+        <h1>Creating Goals</h1>
+        <div class="smart">
+            <div class="smart-content">
+                <img src="https://breezeblog.s3.amazonaws.com/17/smart_goals_template.jpg" alt="define smart" class="smart-img">
+                <p class="smart-desc">Having goals is the first step in becoming who you truly want to be. The SMART goals framework should be used as a checklist whenever creating your goals. Watch the video for a great explaination with steps on how to create you goals.</p>
+            </div>
+            <iframe class="smart-vid" src="https://www.youtube.com/embed/p2LT9wlmjPQ?si=_BdH7cpdXjEL6Q6P" title="Setting Goals" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="container-creating"> 
+        <h1> Create A Goal! </h1>
+        <form class="creating-goals" method="POST"> <!-- Left side has checklist for SMART, Right side has 2 inputs, Name of Goal, Goal  --> 
+            <div class="checklist-smart">
+                <div class="container-checkbox">
+                    <input type="checkbox" id="cb1" name="cb1" value="1">
+                    <label for="cb1">Specific</label>
+                </div>
+                <div class="container-checkbox">
+                    <input type="checkbox" id="cb2" name="cb2" value="1">
+                    <label for="cb2">Measureable</label>
+                </div>
+                <div class="container-checkbox">
+                    <input type="checkbox" id="cb3" name="cb3" value="1">
+                    <label for="cb3">Attainable</label>
+                </div>
+                <div class="container-checkbox">
+                    <input type="checkbox" id="cb4" name="cb4" value="1">
+                    <label for="cb4">Relevant</label>
+                </div>
+                <div class="container-checkbox">
+                    <input type="checkbox" id="cb5" name="cb5" value="1">
+                    <label for="cb5">Time-bound</label>
+                </div>
+            </div> 
+
+            <div class="input-goals">
+                <label>Title: </label>
+                <input type="text" id="name-goal" name="name-goal" placeholder="Title of Smart Goal" spellcheck="true">
+                <label>Goal: </label>
+                <textarea id="text-goal" name="text-goal" rows="3" cols="50" placeholder="Smart Goal"></textarea>
+                <button class = "goal-button"type="submit" name="create_goals_button" value="create_goals_button">Create Goal!</button>
+            </div>  
+        </form>
+    <div>
+
+{% endblock %}

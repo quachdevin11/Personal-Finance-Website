@@ -1,0 +1,309 @@
+/*CSS FOR BOOTSRAP NAV BAR*/
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+}
+
+nav .nav-item, nav .dropdown
+{
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+
+.dropdown-toggle {
+    color: rgba(0,0,0,.55);;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/*CSS FOR INDEX.HTML*/
+
+/* Base styles */
+.container {
+    display: flex;
+    justify-content: space-evenly; /* Adjust this as needed */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+    margin: auto;
+    background-color: #81daa4;
+    width: 90%;
+    height: auto; /* Change to auto for variable height */
+    overflow: hidden; /* Clear floated elements */
+}
+
+.boxes {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: calc(30% - 20px); /* Adjust for margins */
+    min-height: 200px; /* Set a minimum height for boxes */
+    background-color: white;
+    border: solid black;
+    border-radius: 0.3rem;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        display: block; /* Change to block for small screens */
+    }
+
+    .boxes {
+        width: 100%; /* Stack boxes on top of each other for small screens */
+        margin: 10px 0;
+    }
+}
+
+/*CSS FOR TRACKER.HTML*/
+
+/* Base styles */
+h1 {
+    text-align: center;
+    color: green;
+}
+
+/* Common styles for expense and income forms */
+.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Styles for expense and income sections */
+.expense,
+.income {
+    width: 50%;
+    float: left;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.expense {
+    background-color: lightgoldenrodyellow;
+}
+
+.income {
+    background-color: lightblue;
+}
+
+/* Styles for the table */
+table {
+    width: 100%;
+    background-color: transparent;
+    padding-top: 5%;
+    margin: auto;
+}
+
+table th,
+table td {
+    padding: 0.25rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgba(179, 208, 255, 0.3);
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .expense,
+    .income {
+        width: 100%;
+        float: none;
+    }
+}
+
+/*CSS FOR GOALS.HTML*/
+
+.Smart-Goals {
+    width: 100%;
+    padding-top: 40px;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text content */
+}
+
+.smart-content {
+    flex: 1; /* Allow the description and button to share available space */
+    max-width: 800px; /* Limit the maximum width of the description */
+    margin-right: 20px; /* Add spacing between description and img */    
+}
+
+.smart { 
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start; /* Start (left) align the content */
+    align-items: flex-start; /* Align both items to the top of the container */
+}
+
+.smart-desc {
+    display: flex;
+    text-align: center; /* Align description text to the left */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.smart-vid {
+    height : 450px;
+    width: 50%
+}
+
+.goal-button {
+    width: 300px;   
+    align-self: center;
+    margin-top: 10px;
+}
+
+.smart-img {
+    align-self: center;
+    height: 300px;
+}
+
+.container-creating {
+    padding-top: 40px;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text content */
+}
+
+.creating-goals {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.checklist-smart {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 800px; 
+    margin-right: 200px; 
+}
+
+.input-goals {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.container-checkbox {
+    display: flex;
+    align-items: flex-start;
+}
+
+.container-checkbox label {
+    font-size: 24px;
+    cursor: pointer ;
+    display: flex;
+    align-items: center;
+}
+
+.container-checkbox input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 0;           /*Puts default box on top of text. Adds support for Tabbing and Screen Readers*/
+    position: absolute;
+}
+
+.container-checkbox label::before { /*Adds in content (BOX for Checkbox) before the label*/ 
+    content: '';
+    width: 1em;              /*Box Scales with Font*/
+    height: 1em;
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: .05em solid black;
+}
+
+.container-checkbox label:hover::before,
+.container-checkbox input[type='checkbox']:hover + label::before { /*On hover over the box & label that is AFTER box*/ 
+    background-color: lightgreen;
+}
+
+
+.container-checkbox input[type='checkbox']:checked + label::before { /*After selecting box*/
+    content: '\2713'; /*Check mark icon */
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 0 200px black;
+}
+
+.container-checkbox input[type='checkbox']:focus + label::before { /*Creating shadow around box*/
+    box-shadow: 0 0 200px black;
+}
+
+.input-goals {
+    display: flex;
+}
+
+#name-goal {
+    height: 2em;
+    width: 400px;
+}
+
+#text-goal {
+    width: 400px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .smart, .container-creating, .creating-goals {
+        flex-direction: column;
+        width: 100%; /* Stack boxes on top of each other for small screens */
+        margin: 10px 0;
+    }
+
+    .smart-desc, .smart-vid, .smart-content, .smart-img, .input-goals {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .checklist-smart {
+        width: 50%;
+        justify-content: left;
+        align-self: center;
+        margin: 10px 0;
+    }
+
+    .input-goals label {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+}
+
+
+
+.table_goals tr:nth-of-type(odd) {
+    background-color: rgb(179, 208, 255, 0.3)
+}
+
+.under-construction {
+    max-width: 100%; /* Make the image responsive by scaling down to fit its parent container */
+    height: auto; /* Ensure the aspect ratio is maintained */
+    display: block; /* Remove any extra spacing added by default inline elements */
+    margin: 0 auto; /* Center the image horizontally within its parent container (optional) */
+}

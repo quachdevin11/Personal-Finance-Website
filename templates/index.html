@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+            <h1>
+                Welcome to Personal Finance!
+            </h1>
+        
+        <body> 
+            <div class = "container">
+                <div class = "boxes">
+                    <h2>Track</h2>
+                    The best way to get ahold of your finances is by seeing where all the $ is going. Easily track your expenses and income and see overarching statistics regarding your habits.  
+                    <form method="POST" >
+                        <button type="submit" name="button_id" value="Track">Track!</button>
+                    </form> 
+                </div>
+                 
+                <div class = "boxes">
+                    <h2>Set</h2>
+                    Goal setting is one of the most signficant action to take when trying to setup ones life. It gives direction and satisfaction once achieved. Learn how to set the best goals and track them with this feature.
+
+                    <form method="POST" >
+                        <button type="submit" name="button_id" value="Set_Goals">Set Goals!</button>
+                    </form>
+                </div>
+                 
+                <div class = "boxes">
+                    <h2>Invest</h2>
+                    Investing is not just meant for the rich. Anyone and everyone can invest. Learn all the different available tools to invest into and how to invest in them. 
+                    <form method="POST" >
+                        <button type="submit" name="button_id" value="Invest">Invest!</button>
+                    </form>
+                </div>
+            </div>
+        </body>
+    </form>
+{% endblock %}
