@@ -1,5 +1,5 @@
 # Personal Finance Responsive Website
-#### Video Demo:  <URL HERE>
+
 #### Description:
 Financial literacy is such an important topic in the real world. It's a shame that it isn't taught in schools. This website is meant to start teaching and bringing people into the world of financial literacy. The website allows people to create their own accounts to track their finances and set their goals. 
 
